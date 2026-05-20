@@ -1,0 +1,356 @@
+/* --------------------------------
+   GOOGLE FONT
+-------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --------------------------------
+   GLOBAL STYLES
+-------------------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------
+   BODY
+-------------------------------- */
+
+body{
+
+    font-family: 'Poppins', sans-serif;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #0f766e
+        );
+
+}
+
+/* --------------------------------
+   MAIN CONTAINER
+-------------------------------- */
+
+.main-container{
+
+    display: flex;
+
+    height: 100vh;
+
+}
+
+/* --------------------------------
+   LEFT SECTION
+-------------------------------- */
+
+.left-section{
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+        ),
+
+        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop');
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    color: white;
+
+    padding: 50px;
+}
+
+/* --------------------------------
+   LEFT CONTENT
+-------------------------------- */
+
+.content{
+
+    z-index: 2;
+
+    max-width: 500px;
+}
+
+.content h1{
+
+    font-size: 52px;
+
+    margin-bottom: 20px;
+
+    line-height: 1.2;
+}
+
+.content p{
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #d1d5db;
+
+    margin-bottom: 40px;
+}
+
+/* --------------------------------
+   FEATURE BOXES
+-------------------------------- */
+
+.features{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.feature-box{
+
+    background: rgba(255,255,255,0.1);
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.feature-box:hover{
+
+    transform: translateX(10px);
+
+    background: rgba(255,255,255,0.2);
+}
+
+/* --------------------------------
+   RIGHT SECTION
+-------------------------------- */
+
+.right-section{
+
+    width: 500px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(10px);
+}
+
+/* --------------------------------
+   FORM CONTAINER
+-------------------------------- */
+
+.form-container{
+
+    width: 85%;
+
+    background: rgba(255,255,255,0.08);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    color: white;
+}
+
+.form-container h2{
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+    font-size: 30px;
+}
+
+/* --------------------------------
+   INPUT BOX
+-------------------------------- */
+
+.input-box{
+
+    margin-bottom: 22px;
+}
+
+.input-box label{
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: #d1d5db;
+}
+
+.input-box input{
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255,255,255,0.12);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.input-box input::placeholder{
+
+    color: #cbd5e1;
+}
+
+.input-box input:focus{
+
+    border: 1px solid #38bdf8;
+
+    box-shadow: 0 0 10px #38bdf8;
+}
+
+/* --------------------------------
+   BUTTON
+-------------------------------- */
+
+button{
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #06b6d4,
+            #2563eb
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(37,99,235,0.4);
+}
+
+/* --------------------------------
+   RESULT
+-------------------------------- */
+
+.result{
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.1);
+
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #f8fafc;
+}
+
+/* --------------------------------
+   FOOTER
+-------------------------------- */
+
+.footer{
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #cbd5e1;
+}
+
+/* --------------------------------
+   RESPONSIVE DESIGN
+-------------------------------- */
+
+@media(max-width: 1000px){
+
+    .main-container{
+
+        flex-direction: column;
+    }
+
+    .left-section{
+
+        display: none;
+    }
+
+    .right-section{
+
+        width: 100%;
+    }
+
+    .form-container{
+
+        width: 90%;
+    }
+}

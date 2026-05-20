@@ -1,0 +1,31 @@
+Loan_ID,Gender,Married,Education,ApplicantIncome,CoapplicantIncome,LoanAmount,CreditScore,EMI,Loan_Amount_Term,Property_Area,Loan_Status
+LP001,Male,Yes,Graduate,5000,2000,150,750,3200,360,Urban,Approved
+LP002,Female,No,Graduate,3000,0,100,650,2200,360,Rural,Rejected
+LP003,Male,Yes,Not Graduate,4000,1500,120,700,2800,180,Semiurban,Approved
+LP004,Male,Yes,Graduate,6000,2500,200,780,4000,360,Urban,Approved
+LP005,Female,No,Graduate,2500,1200,90,620,1800,180,Rural,Rejected
+LP006,Male,Yes,Graduate,7000,3000,250,800,5000,360,Urban,Approved
+LP007,Female,Yes,Graduate,4500,1800,130,710,3000,240,Semiurban,Approved
+LP008,Male,No,Not Graduate,3200,0,110,640,2100,180,Rural,Rejected
+LP009,Male,Yes,Graduate,5200,2000,160,760,3400,360,Urban,Approved
+LP010,Female,No,Graduate,2800,1000,95,630,1900,180,Rural,Rejected
+LP011,Male,Yes,Graduate,8000,3500,300,820,6200,360,Urban,Approved
+LP012,Female,Yes,Graduate,4800,1500,140,730,3100,240,Semiurban,Approved
+LP013,Male,No,Not Graduate,3100,0,105,610,2000,180,Rural,Rejected
+LP014,Male,Yes,Graduate,6500,2700,220,790,4500,360,Urban,Approved
+LP015,Female,No,Graduate,2600,800,85,600,1700,180,Rural,Rejected
+LP016,Male,Yes,Graduate,7200,3200,270,810,5400,360,Urban,Approved
+LP017,Female,Yes,Graduate,4300,1600,125,705,2900,240,Semiurban,Approved
+LP018,Male,No,Not Graduate,3400,0,115,645,2200,180,Rural,Rejected
+LP019,Male,Yes,Graduate,5600,2100,170,770,3600,360,Urban,Approved
+LP020,Female,No,Graduate,2900,900,92,625,1850,180,Rural,Rejected
+LP021,Male,Yes,Graduate,9000,4000,320,840,7000,360,Urban,Approved
+LP022,Female,Yes,Graduate,4700,1700,135,720,3050,240,Semiurban,Approved
+LP023,Male,No,Not Graduate,3300,0,108,615,2050,180,Rural,Rejected
+LP024,Male,Yes,Graduate,6800,2800,230,795,4700,360,Urban,Approved
+LP025,Female,No,Graduate,2550,700,80,590,1600,180,Rural,Rejected
+LP026,Male,Yes,Graduate,7400,3300,280,815,5600,360,Urban,Approved
+LP027,Female,Yes,Graduate,4400,1400,128,715,2950,240,Semiurban,Approved
+LP028,Male,No,Not Graduate,3500,0,118,650,2250,180,Rural,Rejected
+LP029,Male,Yes,Graduate,5900,2200,180,775,3800,360,Urban,Approved
+LP030,Female,No,Graduate,3000,1000,98,635,1950,180,Rural,Rejected
