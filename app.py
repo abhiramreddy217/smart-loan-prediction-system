@@ -17,6 +17,12 @@ app = Flask(__name__)
 data = pd.read_csv("dataset.csv")
 
 # =========================================
+# REMOVE MISSING VALUES
+# =========================================
+
+data = data.dropna()
+
+# =========================================
 # ENCODE TARGET COLUMN
 # =========================================
 
@@ -60,7 +66,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 # CREATE MODEL
 # =========================================
 
-model = LogisticRegression()
+model = LogisticRegression(max_iter=1000)
 
 # =========================================
 # TRAIN MODEL
@@ -92,31 +98,25 @@ def predict():
         # GET USER INPUTS
         # =========================================
 
-        income = int(request.form['income'])
+        income = float(request.form['income'])
 
-        loan = int(request.form['loan'])
+        loan = float(request.form['loan'])
 
-        credit = int(request.form['credit'])
+        credit = float(request.form['credit'])
 
-        emi = int(request.form['emi'])
+        emi = float(request.form['emi'])
 
         # =========================================
         # SMART VALIDATION RULES
         # =========================================
 
-        # LOW CREDIT SCORE
-
         if credit < 650:
 
             result = "❌ Loan Rejected - Low Credit Score"
 
-        # EMI TOO HIGH
-
         elif emi > (income * 0.5):
 
             result = "❌ Loan Rejected - EMI Too High"
-
-        # LOAN TOO HIGH
 
         elif loan > (income * 5):
 
@@ -154,8 +154,6 @@ def predict():
 
             else:
 
-                # EXTRA APPROVAL LOGIC
-
                 if income >= 5000 and credit >= 700:
 
                     result = "✅ Loan Approved"
@@ -171,6 +169,13 @@ def predict():
         return render_template(
             'index.html',
             prediction=result
+        )
+
+    except ValueError:
+
+        return render_template(
+            'index.html',
+            prediction="❌ Please enter valid numeric values"
         )
 
     except Exception as e:
