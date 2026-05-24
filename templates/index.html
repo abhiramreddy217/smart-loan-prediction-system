@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Loan Repayment Prediction System</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(to right,#0f172a,#1e293b);
+            color:white;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 0;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:bold;
+            color:#38bdf8;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:white;
+            margin-left:20px;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#38bdf8;
+        }
+
+        .hero{
+            min-height:90vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        .hero-content h1{
+            font-size:55px;
+            margin-bottom:20px;
+        }
+
+        .hero-content span{
+            color:#38bdf8;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            color:#d1d5db;
+            line-height:1.8;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            padding:15px 35px;
+            background:#38bdf8;
+            color:black;
+            text-decoration:none;
+            border-radius:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:white;
+        }
+
+        .prediction-section{
+            background:#111827;
+            padding:80px 0;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:40px;
+            margin-bottom:40px;
+        }
+
+        .form-container{
+            width:100%;
+            max-width:600px;
+            margin:auto;
+            background:#1f2937;
+            padding:40px;
+            border-radius:15px;
+        }
+
+        .form-group{
+            margin-bottom:20px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:10px;
+            font-weight:bold;
+        }
+
+        input, select{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            background:#38bdf8;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:white;
+        }
+
+        .prediction-result{
+            text-align:center;
+            margin-top:25px;
+            font-size:24px;
+            color:#38bdf8;
+            font-weight:bold;
+        }
+
+        .features{
+            padding:80px 0;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:#1f2937;
+            padding:30px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            margin-bottom:15px;
+            color:#38bdf8;
+        }
+
+        .card p{
+            color:#d1d5db;
+            line-height:1.7;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#0f172a;
+            color:#9ca3af;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <div class="logo">
+                SmartLoan AI
+            </div>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Prediction</a>
+                <a href="#">Features</a>
+                <a href="#">About</a>
+            </nav>
+
+        </header>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    Smart Loan Repayment
+                    <span>Prediction System</span>
+                </h1>
+
+                <p>
+                    A Machine Learning based web application that predicts
+                    whether a customer can repay a loan using applicant
+                    financial information and credit history analysis.
+                </p>
+
+                <a href="#prediction" class="btn">
+                    Try Prediction
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <section class="prediction-section" id="prediction">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Loan Prediction Form
+            </h2>
+
+            <div class="form-container">
+
+                <form action="/predict" method="POST">
+
+                    <div class="form-group">
+                        <label>Gender</label>
+
+                        <select name="Gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Married</label>
+
+                        <select name="Married">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Applicant Income</label>
+
+                        <input type="number"
+                               name="ApplicantIncome"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Amount</label>
+
+                        <input type="number"
+                               name="LoanAmount"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Amount Term</label>
+
+                        <input type="number"
+                               name="Loan_Amount_Term"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Credit History</label>
+
+                        <input type="number"
+                               name="Credit_History"
+                               required>
+                    </div>
+
+                    <button type="submit">
+                        Predict Loan Status
+                    </button>
+
+                </form>
+
+                <div class="prediction-result">
+                    {{ prediction_text }}
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="features">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Project Features
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Machine Learning</h3>
+
+                    <p>
+                        Uses Logistic Regression algorithm for
+                        accurate loan repayment prediction.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Flask Web Application</h3>
+
+                    <p>
+                        Developed using Python Flask framework
+                        with responsive frontend design.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Data Analysis</h3>
+
+                    <p>
+                        Analyses customer income, loan details,
+                        and credit history for prediction.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Smart Prediction</h3>
+
+                    <p>
+                        Predicts whether the customer is eligible
+                        for successful loan repayment.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Smart Loan Repayment Prediction System | Developed by Abhiram Reddy
+    </footer>
+
+</body>
+
+</html>
